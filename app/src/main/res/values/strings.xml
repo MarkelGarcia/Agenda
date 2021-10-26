@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    <string name="textLogin">Inicio de Sesión</string>
+    <string name="hintUser">Nombre de Usuario</string>
+    <string name="hintPasswd">Contraseña</string>
+    <string name="textBtnLogin">Iniciar Sesión</string>
+    <string name="textRememberMe">Recordar</string>
+
+    <!-- Errores-->
+    <string name="textError">Credenciales incorrectas</string>
+
 </resources>

@@ -7,6 +7,10 @@
     <string name="textBtnLogin">Iniciar Sesión</string>
     <string name="textRememberMe">Recordar</string>
 
+    <string name="bntRegistro">Registro</string>
+    <string name="bntListado">Listado</string>
+    <string name="bntSalir">Salir</string>
+
     <!-- Errores-->
     <string name="textError">Credenciales incorrectas</string>
 </resources>

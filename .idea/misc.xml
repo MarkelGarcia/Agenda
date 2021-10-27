@@ -3,8 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/in2dam-b/AndroidStudioProjects/Agenda/app/src/main/res/drawable/baseline_import_contacts_24.xml" value="0.1" />
-        <entry key="..\:/Users/in2dam-b/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_base.xml" value="0.25" />
+        <entry key="..\:/Users/in2dam-b/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_list.xml" value="0.25" />
+        <entry key="..\:/Users/in2dam-b/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_list_items.xml" value="0.25" />
         <entry key="..\:/Users/in2dam-b/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/in2dam-b/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/in2dam-b/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />

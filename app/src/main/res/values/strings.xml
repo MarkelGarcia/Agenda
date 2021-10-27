@@ -21,6 +21,8 @@
     <string name="TextViewDescripcion">Descripcion</string>
     <string name="TextViewFecha">Fecha</string>
     <string name="TextViewCoste">Coste</string>
+    <string name="TextViewPrioridad">Prioridad</string>
+    <string name="btnRegistrar">Registrar</string>
 
     <!-- Errores-->
     <string name="textError">Credenciales incorrectas</string>

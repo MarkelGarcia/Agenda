@@ -79,6 +79,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/baseline_import_contacts_black_48" />
+        tools:srcCompat="@drawable/logo_android" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

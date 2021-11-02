@@ -18,7 +18,8 @@
         app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
+        app:layout_constraintVertical_bias="0.218"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/TextViewDescripcion"
@@ -68,7 +69,8 @@
         app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407" />
+        app:layout_constraintVertical_bias="0.407"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textViewCoste"
@@ -83,7 +85,7 @@
         app:layout_constraintVertical_bias="0.39"
         tools:text="@string/TextViewCoste" />
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switchRealizadoPendienteUpdate"
         android:layout_width="126dp"
         android:layout_height="48dp"
@@ -133,7 +135,8 @@
         app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintVertical_bias="0.316"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textViewFecha"
@@ -173,6 +176,7 @@
         app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.121"
+        android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

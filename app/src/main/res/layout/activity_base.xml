@@ -16,10 +16,10 @@
         android:layout_marginBottom="383dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/bntSalir" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@string/btnSalir" />
 
     <Button
         android:id="@+id/btnListado"
@@ -29,11 +29,11 @@
         android:layout_marginEnd="162dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.339"
-        tools:text="@string/bntListado" />
+        tools:text="@string/btnListado" />
 
     <Button
         android:id="@+id/btnRegistro"
@@ -45,9 +45,11 @@
         android:layout_marginBottom="515dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/bntRegistro" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@string/btnRegistro" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

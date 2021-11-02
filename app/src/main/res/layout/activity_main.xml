@@ -31,8 +31,9 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.444"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/inputPasswd"
@@ -47,8 +48,9 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.686"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -62,7 +64,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.856" />
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/rememberMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,6 +86,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.025"
-        app:srcCompat="@drawable/logo_android" />
+        app:srcCompat="@drawable/logo_android"
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

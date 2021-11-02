@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
 
+    <string name="logo">LOGO</string>
     <string name="textLogin">Inicio de Sesión</string>
     <string name="hintUser">Nombre de Usuario</string>
     <string name="hintPasswd">Contraseña</string>
@@ -13,10 +14,12 @@
 
     <string name="btnListRealizadas">Realizada</string>
     <string name="btnListPendientes">Pendiente</string>
-    <string name="btnListCancelar">Cancelar</string>
 
     <string name="btnRegistrarNuevaTarea">Registrar Nueva Tarea</string>
     <string name="btnCancelar">Cancelar</string>
+
+    <string name="btnModificar">Modificar</string>
+
     <string name="TextViewNombre">Nombre</string>
     <string name="TextViewDescripcion">Descripcion</string>
     <string name="TextViewFecha">Fecha</string>

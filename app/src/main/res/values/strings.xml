@@ -7,6 +7,8 @@
     <string name="hintPasswd">Contraseña</string>
     <string name="textBtnLogin">Iniciar Sesión</string>
     <string name="textRememberMe">Recordar</string>
+    <string name="loginError">Nombre de usuario y/o contraseña incorrecto/s</string>
+
 
     <string name="btnRegistro">Registro</string>
     <string name="btnListado">Listado</string>

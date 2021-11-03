@@ -7,7 +7,7 @@
     tools:context=".ListActivity">
 
     <TextView
-        android:id="@+id/nombre"
+        android:id="@+id/nombreLi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -15,23 +15,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/descripcion"
+        android:id="@+id/descripcionLi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/nombre"
+        app:layout_constraintStart_toStartOf="@+id/nombreLi"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/fecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/coste"
+        android:id="@+id/fechaLi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -39,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/prioridad"
+        android:id="@+id/costeLi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -47,7 +39,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/realizada"
+        android:id="@+id/prioridadLi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/realizadaLi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"

@@ -29,6 +29,13 @@
     <string name="TextViewPrioridad">Prioridad</string>
     <string name="btnRegistrar">Registrar</string>
 
+    <string-array name="prioridad">
+        <item>Baja</item>
+        <item>Media</item>
+        <item>Alta</item>
+        <item>Urgente</item>
+    </string-array>
+
     <!-- Errores-->
     <string name="textError">Credenciales incorrectas</string>
 </resources>

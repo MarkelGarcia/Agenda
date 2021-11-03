@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 if (rememberMe.isChecked())  editor.putString("usuario", u.getNombre());
                 else editor.clear();
 
+                editor.putString("session", u.getNombre());
+
                 editor.apply();
 
                 // Pasamos a BaseActivity

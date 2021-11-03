@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class DBManager extends SQLiteOpenHelper {
     private static final String DB_NAME = "Agenda.db";
-    private static final int DB_VERSION = 2;
+    private static final int DB_VERSION = 3;
 
     // Tabla USUARIOS
     private static final String TABLE_USUARIO = "Usuario";
@@ -44,7 +44,8 @@ public class DBManager extends SQLiteOpenHelper {
             COSTE + " NUMERIC NOT NULL, " +
             PRIORIDAD + " TEXT NOT NULL, " +
             ESTADO + " INTEGER NOT NULL, " +
-            USUARIO + " TEXT NOT NULL " +
+            USUARIO + " TEXT NOT NULL, " +
+            "FOREIGN KEY(" + USUARIO + ") REFERENCES " + TABLE_USUARIO + "(" + NOMBRE_USUARIO + ")" +
             ")";
 
     private final Context context;
@@ -105,5 +106,55 @@ public class DBManager extends SQLiteOpenHelper {
 
         if (db.insert(TABLE_TAREA, null, values) != -1) return true;
         else return false;
+    }
+
+    public ArrayList<Tarea> selectAllDoneTasksByUser (String user) {
+        ArrayList<Tarea> tasks = new ArrayList<Tarea>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery("SELECT " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 1", null);
+
+        while(c.moveToNext()) {
+            Tarea task = new Tarea();
+
+            task.setNombre(c.getString(0));
+            task.setDescripcion(c.getString(1));
+            task.setFecha(c.getString(2));
+            task.setCoste(Double.parseDouble(c.getString(3)));
+            task.setPrioridad(c.getString(4));
+            task.setEstado(Integer.parseInt(c.getString(5)));
+
+            tasks.add(task);
+        }
+
+        c.close();
+        db.close();
+
+        return tasks;
+    }
+
+    public ArrayList<Tarea> selectAllRemainingTasksByUser (String user) {
+        ArrayList<Tarea> tasks = new ArrayList<Tarea>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery("SELECT " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 0", null);
+
+        while(c.moveToNext()) {
+            Tarea task = new Tarea();
+
+            task.setNombre(c.getString(0));
+            task.setDescripcion(c.getString(1));
+            task.setFecha(c.getString(2));
+            task.setCoste(Double.parseDouble(c.getString(3)));
+            task.setPrioridad(c.getString(4));
+            task.setEstado(Integer.parseInt(c.getString(5)));
+
+            tasks.add(task);
+        }
+
+        c.close();
+        db.close();
+
+        return tasks;
     }
 }

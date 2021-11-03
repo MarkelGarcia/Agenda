@@ -42,15 +42,15 @@
         android:layout_marginBottom="80dp"
         android:ems="10"
         android:hint="@string/hintPasswd"
-        android:inputType="textPersonName"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.686"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btnLogin"

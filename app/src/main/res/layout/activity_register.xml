@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="224dp"
         android:layout_marginEnd="70dp"
+        android:text="@string/btnCancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.982"
-        tools:text="@string/btnCancelar"
         tools:visibility="invisible" />
 
     <TextView
@@ -27,11 +27,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="524dp"
         android:labelFor="@id/spinnerPrioridad"
+        android:text="@string/TextViewPrioridad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/TextViewPrioridad"
         tools:visibility="invisible" />
 
     <EditText
@@ -47,7 +47,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.68"
-        tools:visibility="invisible" />
+        tools:visibility="invisible"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textViewCoste"
@@ -55,11 +56,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="480dp"
         android:labelFor="@id/editTextCoste"
+        android:text="@string/TextViewCoste"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/TextViewCoste"
         tools:visibility="invisible" />
 
     <TextView
@@ -67,13 +68,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/editTextFecha"
+        android:text="@string/TextViewFecha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.591"
-        tools:text="@string/TextViewFecha"
         tools:visibility="invisible" />
 
     <EditText
@@ -89,7 +90,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.59"
-        tools:visibility="invisible" />
+        tools:visibility="invisible"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editTextDescripcion"
@@ -103,7 +105,8 @@
         app:layout_constraintHorizontal_bias="0.611"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="invisible" />
+        tools:visibility="invisible"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textViewNombre"
@@ -112,13 +115,13 @@
         android:layout_marginTop="295dp"
         android:layout_marginBottom="417dp"
         android:labelFor="@id/editTextNombre"
+        android:text="@string/TextViewNombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        tools:text="@string/TextViewNombre"
         tools:visibility="invisible" />
 
     <Button
@@ -129,13 +132,13 @@
         android:layout_marginTop="95dp"
         android:layout_marginEnd="222dp"
         android:layout_marginBottom="588dp"
+        android:text="@string/btnRegistrarNuevaTarea"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:text="@string/btnRegistrarNuevaTarea" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnCancelar"
@@ -143,25 +146,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
         android:layout_marginEnd="159dp"
+        android:text="@string/btnCancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253"
-        tools:text="@string/btnCancelar" />
+        app:layout_constraintVertical_bias="0.253" />
 
     <TextView
         android:id="@+id/TextViewDescripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/editTextDescripcion"
+        android:text="@string/TextViewDescripcion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/TextViewDescripcion"
         tools:visibility="invisible" />
 
     <EditText
@@ -177,7 +180,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.412"
-        tools:visibility="invisible" />
+        tools:visibility="invisible"
+        android:importantForAutofill="no" />
 
     <Spinner
         android:id="@+id/spinnerPrioridad"
@@ -199,22 +203,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginEnd="224dp"
+        android:text="@string/btnRegistrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.982"
-        tools:text="@string/btnRegistrar"
         tools:visibility="invisible" />
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switchRealizadoPendiente"
         android:layout_width="126dp"
         android:layout_height="48dp"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="162dp"
         android:minHeight="48dp"
+        android:text="@string/btnListRealizadas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.552"
@@ -222,6 +227,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.896"
         tools:checked="false"
-        tools:text="@string/btnListRealizadas"
         tools:visibility="invisible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

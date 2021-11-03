@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,32 +27,33 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText editFecha = null;
     private EditText editCoste = null;
     private Spinner spinnerPrioridad = null;
-    private Switch switchRealizadaPendiente = null;
+    private SwitchCompat switchRealizadaPendiente = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        appear = (Button) findViewById( R.id.btnRegistrarNuevaTarea);
-
-        nombre = (TextView) findViewById(R.id.textViewNombre);
-        descripcion = (TextView) findViewById(R.id.TextViewDescripcion);
-        fecha = (TextView) findViewById(R.id.textViewFecha);
-        coste = (TextView) findViewById(R.id.textViewCoste);
-        prioridad = (TextView) findViewById(R.id.textViewPrioridad);
-
-        registrar = (Button) findViewById( R.id.btnRegistrar);
-        cancelar = (Button) findViewById( R.id.btnCancelar2);
-
-        editNombre = (EditText) findViewById(R.id.editTextNombre);
-        editDescripcion = (EditText) findViewById(R.id.editTextDescripcion);
-        editFecha = (EditText) findViewById(R.id.editTextFecha);
-        editCoste = (EditText) findViewById(R.id.editTextCoste);
-
-        spinnerPrioridad = (Spinner) findViewById(R.id.spinnerPrioridad);
-        switchRealizadaPendiente = (Switch) findViewById(R.id.switchRealizadoPendiente);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        appear = findViewById( R.id.btnRegistrarNuevaTarea);
+
+        nombre = findViewById(R.id.textViewNombre);
+        descripcion = findViewById(R.id.TextViewDescripcion);
+        fecha = findViewById(R.id.textViewFecha);
+        coste = findViewById(R.id.textViewCoste);
+        prioridad = findViewById(R.id.textViewPrioridad);
+
+        registrar = findViewById( R.id.btnRegistrar);
+        cancelar = findViewById( R.id.btnCancelar2);
+
+        editNombre = findViewById(R.id.editTextNombre);
+        editDescripcion = findViewById(R.id.editTextDescripcion);
+        editFecha = findViewById(R.id.editTextFecha);
+        editCoste =findViewById(R.id.editTextCoste);
+
+        spinnerPrioridad = findViewById(R.id.spinnerPrioridad);
+        switchRealizadaPendiente = findViewById(R.id.switchRealizadoPendiente);
+
+
 
         appear.setOnClickListener( (view) -> {
             nombre.setVisibility(View.VISIBLE);

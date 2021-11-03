@@ -22,10 +22,14 @@ public class ListActivity extends AppCompatActivity {
 
         btnListRealizadas.setOnClickListener( (view) -> {
             loadRealizadas();
+            btnListRealizadas.setEnabled( false );
+            btnListPendientes.setEnabled( true );
         } );
 
         btnListPendientes.setOnClickListener( (view) -> {
             loadPendientes();
+            btnListRealizadas.setEnabled( true );
+            btnListPendientes.setEnabled( false );
         } );
 
         btnListCancelar.setOnClickListener( (view) -> {

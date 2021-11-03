@@ -18,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnLogin = findViewById(R.id.btnLogin);
         EditText inputNombre = findViewById(R.id.inputUser);
+        Button btnLogin = findViewById(R.id.btnLogin);
+        SwitchCompat rememberMe = findViewById(R.id.rememberMe);
 
         SharedPreferences sharedPref = this.getSharedPreferences( "temp", Context.MODE_PRIVATE );
         SharedPreferences.Editor editor = sharedPref.edit();
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             if ( dbManager.validateLogin( u ) ) {
 
                 // Comprobar Remember Me
-                SwitchCompat rememberMe = findViewById(R.id.rememberMe);
 
                 if (rememberMe.isChecked())  editor.putString("usuario", u.getNombre());
                 else editor.clear();
@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
             }
         } );
 
-        if (sharedPref.contains("usuario")) inputNombre.setText( sharedPref.getString("usuario", "") );
+        if (sharedPref.contains("usuario")) {
+            inputNombre.setText( sharedPref.getString("usuario", "") );
+            rememberMe.setChecked(true);
+        }
     }
 }

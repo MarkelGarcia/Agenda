@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.444"
         tools:ignore="TextContrastCheck"
-        android:autofillHints="" />
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/inputPasswd"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.686"
         tools:ignore="TextContrastCheck"
-        android:autofillHints="" />
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btnLogin"

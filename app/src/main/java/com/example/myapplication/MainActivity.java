@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 // Pasamos a BaseActivity
                 Intent i = new Intent(this, BaseActivity.class);
                 startActivity(i);
+                inputPasswd.setText("");
             } else {
                 // ERROR de login
                 Toast t = Toast.makeText(this, getText(R.string.loginError), Toast.LENGTH_LONG);

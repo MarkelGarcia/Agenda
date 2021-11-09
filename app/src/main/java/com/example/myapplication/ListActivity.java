@@ -42,8 +42,8 @@ public class ListActivity extends AppCompatActivity {
 
         listTareas.setOnItemClickListener( (parent, view, position, id) -> {
             Intent intent = new Intent(this, DetailActivity.class);
-            Tarea li = parent.getItemAtPosition(position);
-            intent.putExtra("TaskID", );
+            Tarea li = (Tarea) parent.getItemAtPosition(position);
+            intent.putExtra("TaskID", String.valueOf(li.getId()));
         } );
 
         loadRealizadas();

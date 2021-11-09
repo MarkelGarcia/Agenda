@@ -34,6 +34,7 @@ public class TareaAdapter extends ArrayAdapter<Tarea> {
             TextView tvPrioridad = convertView.findViewById(R.id.prioridadLi);
             // Populate the data into the template view using the data object
 
+            tvID.setText( String.valueOf(task.getId()) );
             tvNombre.setText(task.getNombre());
             tvDescripcion.setText(task.getDescripcion());
             tvFecha.setText(task.getFecha());

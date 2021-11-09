@@ -112,17 +112,18 @@ public class DBManager extends SQLiteOpenHelper {
         ArrayList<Tarea> tasks = new ArrayList<Tarea>();
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor c = db.rawQuery("SELECT " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 1", null);
+        Cursor c = db.rawQuery("SELECT " + ID + ", " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 1", null);
 
         while(c.moveToNext()) {
             Tarea task = new Tarea();
 
-            task.setNombre(c.getString(0));
-            task.setDescripcion(c.getString(1));
-            task.setFecha(c.getString(2));
-            task.setCoste(Double.parseDouble(c.getString(3)));
-            task.setPrioridad(c.getString(4));
-            task.setEstado(Integer.parseInt(c.getString(5)));
+            task.setId(c.getInt(0));
+            task.setNombre(c.getString(1));
+            task.setDescripcion(c.getString(2));
+            task.setFecha(c.getString(3));
+            task.setCoste(Double.parseDouble(c.getString(4)));
+            task.setPrioridad(c.getString(5));
+            task.setEstado(Integer.parseInt(c.getString(6)));
 
             tasks.add(task);
         }
@@ -137,17 +138,18 @@ public class DBManager extends SQLiteOpenHelper {
         ArrayList<Tarea> tasks = new ArrayList<Tarea>();
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor c = db.rawQuery("SELECT " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 0", null);
+        Cursor c = db.rawQuery("SELECT " + ID + ", " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 0", null);
 
         while(c.moveToNext()) {
             Tarea task = new Tarea();
 
-            task.setNombre(c.getString(0));
-            task.setDescripcion(c.getString(1));
-            task.setFecha(c.getString(2));
-            task.setCoste(Double.parseDouble(c.getString(3)));
-            task.setPrioridad(c.getString(4));
-            task.setEstado(Integer.parseInt(c.getString(5)));
+            task.setId(c.getInt(0));
+            task.setNombre(c.getString(1));
+            task.setDescripcion(c.getString(2));
+            task.setFecha(c.getString(3));
+            task.setCoste(Double.parseDouble(c.getString(4)));
+            task.setPrioridad(c.getString(5));
+            task.setEstado(Integer.parseInt(c.getString(6)));
 
             tasks.add(task);
         }

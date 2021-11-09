@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:visibility="gone"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="90dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Agenda</string>
 
     <string name="logo">LOGO</string>
     <string name="textLogin">Inicio de Sesión</string>
@@ -38,4 +38,5 @@
 
     <!-- Errores-->
     <string name="textError">Credenciales incorrectas</string>
+
 </resources>

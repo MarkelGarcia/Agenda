@@ -3,18 +3,22 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
-
+    private ListView listTareas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        listTareas = findViewById(R.id.listTareas);
 
         Button btnListRealizadas = findViewById(R.id.btnListRealizadas);
         Button btnListPendientes = findViewById(R.id.btnListPendientes);
@@ -36,6 +40,12 @@ public class ListActivity extends AppCompatActivity {
             finish();
         } );
 
+        listTareas.setOnItemClickListener( (parent, view, position, id) -> {
+            Intent intent = new Intent(this, DetailActivity.class);
+            Tarea li = parent.getItemAtPosition(position);
+            intent.putExtra("TaskID", );
+        } );
+
         loadRealizadas();
 
     }
@@ -44,12 +54,10 @@ public class ListActivity extends AppCompatActivity {
         DBManager db = new DBManager(this);
         db.getWritableDatabase();
 
-        String user = this.getSharedPreferences("temp", Context.MODE_PRIVATE).getString("session", null);
-        ArrayList<Tarea> tasks = db.selectAllDoneTasksByUser(user);
+        String user = this.getSharedPreferences("temp", Context.MODE_PRIVATE).getString("session", "");
+        ArrayList<Tarea> tasks = db.selectAllCompletedTasksByUser(user);
 
         // Mostrar tabla
-        ListView listTareas = findViewById(R.id.listTareas);
-
         TareaAdapter adapter = new TareaAdapter(this,
                 tasks
         );
@@ -61,12 +69,10 @@ public class ListActivity extends AppCompatActivity {
         DBManager db = new DBManager(this);
         db.getWritableDatabase();
 
-        String user = this.getSharedPreferences("temp", Context.MODE_PRIVATE).getString("session", null);
+        String user = this.getSharedPreferences("temp", Context.MODE_PRIVATE).getString("session", "");
         ArrayList<Tarea> tasks = db.selectAllRemainingTasksByUser(user);
 
         // Mostrar tabla
-        ListView listTareas = findViewById(R.id.listTareas);
-
         TareaAdapter adapter = new TareaAdapter(this,
                 tasks
         );

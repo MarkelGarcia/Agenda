@@ -108,7 +108,7 @@ public class DBManager extends SQLiteOpenHelper {
         else return false;
     }
 
-    public ArrayList<Tarea> selectAllDoneTasksByUser (String user) {
+    public ArrayList<Tarea> selectAllCompletedTasksByUser (String user) {
         ArrayList<Tarea> tasks = new ArrayList<Tarea>();
 
         SQLiteDatabase db = this.getWritableDatabase();

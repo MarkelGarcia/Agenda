@@ -98,6 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
             if (db.insertTarea( tarea )) {
                 Toast t = Toast.makeText(this, "Tarea insertada correctamente", Toast.LENGTH_LONG);
                 t.show();
+                finish();
             } else {
                 Toast t = Toast.makeText(this, "Ha ocurrido un error al insertar", Toast.LENGTH_LONG);
                 t.show();

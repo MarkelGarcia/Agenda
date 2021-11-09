@@ -70,8 +70,8 @@ public class DBManager extends SQLiteOpenHelper {
     }
 
     // Valida el login
-    public boolean validateLogin (Usuario user) {
-    boolean isValid = false;
+    public boolean validateLogin(Usuario user) {
+        boolean isValid = false;
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT " + NOMBRE_USUARIO + ", " + PASSWORD + " FROM " + TABLE_USUARIO + " WHERE " + NOMBRE_USUARIO + " = '" + user.getNombre() + "' AND " + PASSWORD + " = '" + user.getPassword() + "'", null);
@@ -84,37 +84,23 @@ public class DBManager extends SQLiteOpenHelper {
         return isValid;
     }
 
-    public boolean updatePassword (Usuario u) {
+    public boolean updatePassword(Usuario u) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(PASSWORD, u.getPassword());
 
-        if (db.update(TABLE_USUARIO, values, NOMBRE_USUARIO + " = ?", new String[]{u.getNombre()}) != -1) return true;
+        if (db.update(TABLE_USUARIO, values, NOMBRE_USUARIO + " = ?", new String[]{u.getNombre()}) != -1)
+            return true;
         else return false;
     }
 
-    public boolean insertTarea (Tarea tarea) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(NOMBRE_TAREA, tarea.getNombre());
-        values.put(DESCRIPCION, tarea.getDescripcion());
-        values.put(FECHA, tarea.getFecha());
-        values.put(COSTE, tarea.getCoste());
-        values.put(PRIORIDAD, tarea.getPrioridad());
-        values.put(ESTADO, tarea.getEstado());
-        values.put(USUARIO, tarea.getUsuario().getNombre());
-
-        if (db.insert(TABLE_TAREA, null, values) != -1) return true;
-        else return false;
-    }
-
-    public ArrayList<Tarea> selectAllCompletedTasksByUser (String user) {
+    public ArrayList<Tarea> selectAllCompletedTasksByUser(String user) {
         ArrayList<Tarea> tasks = new ArrayList<Tarea>();
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT " + ID + ", " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 1", null);
 
-        while(c.moveToNext()) {
+        while (c.moveToNext()) {
             Tarea task = new Tarea();
 
             task.setId(c.getInt(0));
@@ -134,13 +120,13 @@ public class DBManager extends SQLiteOpenHelper {
         return tasks;
     }
 
-    public ArrayList<Tarea> selectAllRemainingTasksByUser (String user) {
+    public ArrayList<Tarea> selectAllRemainingTasksByUser(String user) {
         ArrayList<Tarea> tasks = new ArrayList<Tarea>();
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT " + ID + ", " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 0", null);
 
-        while(c.moveToNext()) {
+        while (c.moveToNext()) {
             Tarea task = new Tarea();
 
             task.setId(c.getInt(0));
@@ -158,5 +144,42 @@ public class DBManager extends SQLiteOpenHelper {
         db.close();
 
         return tasks;
+    }
+
+    public boolean insertTarea(Tarea task) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(NOMBRE_TAREA, task.getNombre());
+        values.put(DESCRIPCION, task.getDescripcion());
+        values.put(FECHA, task.getFecha());
+        values.put(COSTE, task.getCoste());
+        values.put(PRIORIDAD, task.getPrioridad());
+        values.put(ESTADO, task.getEstado());
+        values.put(USUARIO, task.getUsuario().getNombre());
+
+        if (db.insert(TABLE_TAREA, null, values) != -1) return true;
+        else return false;
+    }
+
+    public boolean updateTask(Tarea task) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(NOMBRE_TAREA, task.getNombre());
+        values.put(DESCRIPCION, task.getDescripcion());
+        values.put(FECHA, task.getFecha());
+        values.put(COSTE, task.getCoste());
+        values.put(PRIORIDAD, task.getPrioridad());
+        values.put(ESTADO, task.getEstado());
+
+        if (db.update(TABLE_TAREA, values, ID + " = ?", new String[] {String.valueOf(task.getId())}) != -1) return true;
+        else return false;
+    }
+
+    public boolean deleteTaskById(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        if (db.delete(TABLE_TAREA, ID + " = ?", new String[]{String.valueOf(id)}) != -1)
+            return true;
+        else return false;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -49,6 +50,21 @@ public class ListActivity extends AppCompatActivity {
         } );
 
         loadRealizadas();
+
+        listTareas.setOnItemClickListener( (parent, view, position, id) -> {
+
+            if (view.isPressed()) {
+                Tarea task = (Tarea) parent.getItemAtPosition(position);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Borrar selección");
+                builder.setMessage("¿Seguro que desea borrar esta Tarea?");
+
+                builder.setPositiveButton("Aceptar", null);
+                builder.setNegativeButton("Cancelar", null);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
 
     }
 

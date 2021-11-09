@@ -12,21 +12,30 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class DetailActivity extends AppCompatActivity {
+    private Button btnModificar;
+    private Button btnCancelar;
+
+    private EditText editNombre;
+    private EditText editDescripcion;
+    private EditText editFecha;
+    private EditText editCoste;
+    private Spinner spPrioridad;
+    private SwitchCompat swRealizada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        Button btnModificar = findViewById(R.id.btnModificar);
-        Button btnCancelar = findViewById(R.id.btnCancelarUpdate);
+        btnModificar = findViewById(R.id.btnModificar);
+        btnCancelar = findViewById(R.id.btnCancelarUpdate);
 
-        EditText editNombre = findViewById(R.id.editTextNombreUpdate);
-        EditText editDescripcion = findViewById(R.id.editTextDescripcionUpdate);
-        EditText editFecha = findViewById(R.id.editTextFechaUpdate);
-        EditText editCoste = findViewById(R.id.editTextCosteUpdate);
-        Spinner spPrioridad = findViewById(R.id.spinnerPrioridadUpdate);
-        SwitchCompat swRealizada = findViewById(R.id.switchRealizadoPendienteUpdate);
+        editNombre = findViewById(R.id.editTextNombreUpdate);
+        editDescripcion = findViewById(R.id.editTextDescripcionUpdate);
+        editFecha = findViewById(R.id.editTextFechaUpdate);
+        editCoste = findViewById(R.id.editTextCosteUpdate);
+        spPrioridad = findViewById(R.id.spinnerPrioridadUpdate);
+        swRealizada = findViewById(R.id.switchRealizadoPendienteUpdate);
 
         Intent intent = getIntent();
         Tarea taskExtra = intent.getExtras().getParcelable("task");

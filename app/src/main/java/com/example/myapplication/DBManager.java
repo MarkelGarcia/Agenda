@@ -84,6 +84,7 @@ public class DBManager extends SQLiteOpenHelper {
         return isValid;
     }
 
+    // Actualiza la clave del usuario logeado
     public boolean updatePassword(Usuario u) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -94,6 +95,7 @@ public class DBManager extends SQLiteOpenHelper {
         else return false;
     }
 
+    // Devuelve un ArrayList<Tarea> con las tareas completadas del usuario logeado
     public ArrayList<Tarea> selectAllCompletedTasksByUser(String user) {
         ArrayList<Tarea> tasks = new ArrayList<Tarea>();
 
@@ -120,6 +122,7 @@ public class DBManager extends SQLiteOpenHelper {
         return tasks;
     }
 
+    // Devuelve un ArrayList<Tarea> con las tareas incompletas del usuario logeado
     public ArrayList<Tarea> selectAllRemainingTasksByUser(String user) {
         ArrayList<Tarea> tasks = new ArrayList<Tarea>();
 
@@ -146,6 +149,7 @@ public class DBManager extends SQLiteOpenHelper {
         return tasks;
     }
 
+    // Inserta una nueva tarea al usuario logeado y nos devuelve un booleano indicando si la inserción se completó correctamente
     public boolean insertTarea(Tarea task) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -161,6 +165,8 @@ public class DBManager extends SQLiteOpenHelper {
         else return false;
     }
 
+    // Actualiza una tarea y nos devuelve un booleano indicando si la inserción se completó correctamente,
+    // en este caso como el usuario solo puede ver sus tareas no hay necesidad de añadir un filtro de WHERE Usuario = 'Admin'
     public boolean updateTask(Tarea task) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -176,6 +182,8 @@ public class DBManager extends SQLiteOpenHelper {
         else return false;
     }
 
+    // Elimina una tarea en abse a su ID,
+    // en este caso como el usuario solo puede ver sus tareas no hay necesidad de añadir un filtro de WHERE Usuario = 'Admin'
     public boolean deleteTaskById(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         if (db.delete(TABLE_TAREA, ID + " = ?", new String[]{String.valueOf(id)}) != -1)

@@ -47,6 +47,7 @@ public class ListActivity extends AppCompatActivity {
             finish();
         });
 
+        // Capturamos el click y
         listTareas.setOnItemClickListener((parent, view, position, id) -> {
 
             Intent i = new Intent(this, DetailActivity.class);
@@ -54,7 +55,6 @@ public class ListActivity extends AppCompatActivity {
             i.putExtra("task", task);
 
             startActivity(i);
-
 
         });
 

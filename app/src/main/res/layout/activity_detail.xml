@@ -11,6 +11,7 @@
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.218"
-        android:importantForAutofill="no" />
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/TextViewDescripcion"
@@ -32,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.209"
-        tools:text="@string/TextViewDescripcion" />
+        android:text="@string/TextViewDescripcion" />
 
     <Spinner
         android:id="@+id/spinnerPrioridadUpdate"
@@ -43,25 +44,28 @@
         app:layout_constraintHorizontal_bias="0.367"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532" />
+        app:layout_constraintVertical_bias="0.521"
+        android:entries="@array/prioridad"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/textViewPrioridad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="364dp"
         android:labelFor="@id/spinnerPrioridadUpdate"
+        android:text="@string/TextViewPrioridad"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/TextViewPrioridad" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextCosteUpdate"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,7 +74,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.407"
-        android:importantForAutofill="no" />
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/textViewCoste"
@@ -83,21 +87,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.39"
-        tools:text="@string/TextViewCoste" />
+        android:text="@string/TextViewCoste" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switchRealizadoPendienteUpdate"
         android:layout_width="126dp"
         android:layout_height="48dp"
         android:minHeight="48dp"
+        android:text="@string/btnListRealizadas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644"
-        tools:checked="false"
-        tools:text="@string/btnListRealizadas" />
+        app:layout_constraintVertical_bias="0.644" />
 
     <Button
         android:id="@+id/btnModificar"
@@ -109,7 +112,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.828"
-        tools:text="@string/btnModificar" />
+        android:text="@string/btnModificar" />
 
     <Button
         android:id="@+id/btnCancelar2"
@@ -121,13 +124,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.828"
-        tools:text="@string/btnCancelar" />
+        android:text="@string/btnCancelar" />
 
     <EditText
         android:id="@+id/editTextFechaUpdate"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -136,7 +140,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.316"
-        android:importantForAutofill="no" />
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/textViewFecha"
@@ -149,26 +153,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.304"
-        tools:text="@string/TextViewFecha" />
+        android:text="@string/TextViewFecha" />
 
     <TextView
         android:id="@+id/textViewNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:labelFor="@id/EditTextNombreUpdate"
+        android:labelFor="@id/editTextNombreUpdate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.116"
-        tools:text="@string/TextViewNombre" />
+        android:text="@string/TextViewNombre" />
 
     <EditText
-        android:id="@+id/EditTextNombreUpdate"
+        android:id="@+id/editTextNombreUpdate"
         android:layout_width="250dp"
         android:layout_height="48dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -177,6 +182,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.121"
-        android:importantForAutofill="no" />
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

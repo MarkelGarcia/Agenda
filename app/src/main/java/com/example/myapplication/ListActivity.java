@@ -44,14 +44,17 @@ public class ListActivity extends AppCompatActivity {
         listTareas.setOnItemClickListener( (parent, view, position, id) -> {
             Intent i = new Intent(this, DetailActivity.class);
             Tarea task = (Tarea) parent.getItemAtPosition(position);
-            i.putExtra("TaskID", String.valueOf(task.getId()));
+            i.putExtra("task", task);
 
             startActivity(i);
+
+            if (btnListPendientes.isEnabled()) loadRealizadas();
+            else loadPendientes();
         } );
 
         loadRealizadas();
 
-        listTareas.setOnItemClickListener( (parent, view, position, id) -> {
+        /*listTareas.setOnItemClickListener( (parent, view, position, id) -> {
 
             if (view.isPressed()) {
                 Tarea task = (Tarea) parent.getItemAtPosition(position);
@@ -64,7 +67,7 @@ public class ListActivity extends AppCompatActivity {
                 AlertDialog dialog = builder.create();
                 dialog.show();
             }
-        });
+        });*/
 
     }
 

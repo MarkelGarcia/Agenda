@@ -3,7 +3,7 @@ package com.example.myapplication;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Tarea {
+public class Tarea implements Parcelable {
     private int id;
     private String nombre;
     private String descripcion;
@@ -26,6 +26,9 @@ public class Tarea {
         this.usuario = usuario;
     }
 
+    public Tarea ( Parcel in ) {
+        readFromParcel(in);
+    }
 
     public int getId() { return this.id; }
 
@@ -87,4 +90,43 @@ public class Tarea {
         this.usuario = usuario;
     }
 
+    // Implementación de Parcelable
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeString(String.valueOf(this.id));
+        out.writeString(this.nombre);
+        out.writeString(this.descripcion);
+        out.writeString(this.fecha);
+        out.writeString(String.valueOf(this.coste));
+        out.writeString(this.prioridad);
+        out.writeString(String.valueOf(this.estado));
+    }
+
+    private void readFromParcel (Parcel in) {
+        this.id = Integer.parseInt(in.readString());
+        this.nombre = in.readString();
+        this.descripcion = in.readString();
+        this.fecha = in.readString();
+        this.coste = Double.parseDouble(in.readString());
+        this.prioridad = in.readString();
+        this.estado = Integer.parseInt(in.readString());
+    }
+
+    public static final Parcelable.Creator<Tarea> CREATOR = new Parcelable.Creator<Tarea>() {
+
+        @Override
+        public Tarea createFromParcel(Parcel in) {
+            return new Tarea(in);
+        }
+
+        @Override
+        public Tarea[] newArray(int size) {
+            return new Tarea[size];
+        }
+    };
 }

@@ -11,19 +11,24 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class BaseActivity extends AppCompatActivity {
+    Button btnListado;
+    Button btnRegistro;
+    Button btnSalir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
-        Button btnListado = findViewById(R.id.btnListado);
-        Button btnRegistro = findViewById(R.id.btnRegistro);
-        Button btnSalir = findViewById(R.id.btnSalir);
+        btnListado = findViewById(R.id.btnListado);
+        btnRegistro = findViewById(R.id.btnRegistro);
+        btnSalir = findViewById(R.id.btnSalir);
 
         btnListado.setOnClickListener( (view) -> {
             Intent i = new Intent(this, ListActivity.class);
@@ -46,35 +51,47 @@ public class BaseActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.changePassword) {
 
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            builder.setMessage("Introduzca la nueva contraseña");
+            builder.setTitle("Cambiar contraseña");
 
-            EditText newContra = new EditText(this);
-            alert.setMessage("Introduzca la nueva contraseña");
-            alert.setTitle("Cambiar contraseña");
+            builder.setView(R.layout.change_password_layout);
 
-            alert.setView(newContra);
-
-            alert.setPositiveButton("Cambiar", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton("Cambiar", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                    //What ever you want to do with the value
-                    String password = newContra.getText().toString();
 
                     Context contexto = getApplicationContext();
-                    DBManager db = new DBManager(contexto);
-                    SharedPreferences sharedPref = contexto.getSharedPreferences( "temp", Context.MODE_PRIVATE );
 
-                    db.updatePassword(new Usuario(sharedPref.getString("session" , null), password));
+                    EditText editPassword = ((AlertDialog) dialog).findViewById(R.id.editTextPassword);
+                    EditText editPasswordConfirm = ((AlertDialog) dialog).findViewById(R.id.editTextPasswordConfirm);
+
+                    if (editPassword.getText().toString().equals(editPasswordConfirm.getText().toString())) {
+
+                        DBManager db = new DBManager(contexto);
+                        SharedPreferences sharedPref = contexto.getSharedPreferences( "temp", Context.MODE_PRIVATE );
+
+                        if (db.updatePassword(new Usuario(sharedPref.getString("session" , null), editPasswordConfirm.getText().toString()))) {
+                            Toast t = Toast.makeText(contexto, "Contraseña actualizada", Toast.LENGTH_LONG);
+                            t.show();
+                        } else {
+                            Toast t = Toast.makeText(contexto, "Error al cambiar la contraseña", Toast.LENGTH_LONG);
+                            t.show();
+                        }
+                    } else {
+                        Toast t = Toast.makeText(contexto, "Las contraseñas no coinciden", Toast.LENGTH_LONG);
+                        t.show();
+                    }
+
                 }
             });
 
-            alert.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
+            builder.setNegativeButton("Cancelar", null);
 
-                }
-            });
+            AlertDialog alert = builder.create();
 
             alert.show();
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -83,14 +100,5 @@ public class BaseActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
-
-   /* public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    } */
 
 }

@@ -27,13 +27,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/editTextDescripcionUpdate"
+        android:text="@string/textViewDescripcion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.209"
-        android:text="@string/TextViewDescripcion" />
+        app:layout_constraintVertical_bias="0.209" />
 
     <Spinner
         android:id="@+id/spinnerPrioridadUpdate"
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/spinnerPrioridadUpdate"
-        android:text="@string/TextViewPrioridad"
+        android:text="@string/textViewPrioridad"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.084"
@@ -81,13 +81,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/editTextCosteUpdate"
+        android:text="@string/textViewCoste"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39"
-        android:text="@string/TextViewCoste" />
+        app:layout_constraintVertical_bias="0.39" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switchRealizadoPendienteUpdate"
@@ -147,26 +147,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/editTextFechaUpdate"
+        android:text="@string/textViewFecha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304"
-        android:text="@string/TextViewFecha" />
+        app:layout_constraintVertical_bias="0.304" />
 
     <TextView
         android:id="@+id/textViewNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:labelFor="@id/editTextNombreUpdate"
+        android:text="@string/textViewNombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116"
-        android:text="@string/TextViewNombre" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <EditText
         android:id="@+id/editTextNombreUpdate"

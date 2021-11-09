@@ -7,8 +7,6 @@
     <string name="hintPasswd">Contraseña</string>
     <string name="textBtnLogin">Iniciar Sesión</string>
     <string name="textRememberMe">Recordar</string>
-    <string name="loginError">Nombre de usuario y/o contraseña incorrecto/s</string>
-
 
     <string name="btnRegistro">Registro</string>
     <string name="btnListado">Listado</string>
@@ -22,12 +20,15 @@
 
     <string name="btnModificar">Modificar</string>
 
-    <string name="TextViewNombre">Nombre</string>
-    <string name="TextViewDescripcion">Descripcion</string>
-    <string name="TextViewFecha">Fecha</string>
-    <string name="TextViewCoste">Coste</string>
-    <string name="TextViewPrioridad">Prioridad</string>
+    <string name="textViewNombre">Nombre</string>
+    <string name="textViewDescripcion">Descripcion</string>
+    <string name="textViewFecha">Fecha</string>
+    <string name="textViewCoste">Coste</string>
+    <string name="textViewPrioridad">Prioridad</string>
     <string name="btnRegistrar">Registrar</string>
+
+    <string name="editTextPassword">Contraseña</string>
+    <string name="editTextPasswordConfirmar">Confirmar contraseña</string>
 
     <string-array name="prioridad">
         <item>Baja</item>
@@ -37,6 +38,6 @@
     </string-array>
 
     <!-- Errores-->
-    <string name="textError">Credenciales incorrectas</string>
+    <string name="loginError">Nombre de usuario y/o contraseña incorrecto/s</string>
 
 </resources>

@@ -100,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
                 t.show();
                 finish();
             } else {
-                Toast t = Toast.makeText(this, "Ha ocurrido un error al insertar", Toast.LENGTH_LONG);
+                Toast t = Toast.makeText(this, "Ha ocurrido un error al insertar, comprueba los campos", Toast.LENGTH_LONG);
                 t.show();
             }
         } );

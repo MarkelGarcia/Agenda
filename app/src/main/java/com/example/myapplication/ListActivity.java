@@ -41,9 +41,11 @@ public class ListActivity extends AppCompatActivity {
         } );
 
         listTareas.setOnItemClickListener( (parent, view, position, id) -> {
-            Intent intent = new Intent(this, DetailActivity.class);
-            Tarea li = (Tarea) parent.getItemAtPosition(position);
-            intent.putExtra("TaskID", String.valueOf(li.getId()));
+            Intent i = new Intent(this, DetailActivity.class);
+            Tarea task = (Tarea) parent.getItemAtPosition(position);
+            i.putExtra("TaskID", String.valueOf(task.getId()));
+
+            startActivity(i);
         } );
 
         loadRealizadas();

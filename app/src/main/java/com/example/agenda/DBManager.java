@@ -1,9 +1,8 @@
-package com.example.myapplication;
+package com.example.agenda;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -86,18 +85,21 @@ public class DBManager extends SQLiteOpenHelper {
 
     // Actualiza la clave del usuario logeado
     public boolean updatePassword(Usuario u) {
+        boolean res = false;
+
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(PASSWORD, u.getPassword());
 
         if (db.update(TABLE_USUARIO, values, NOMBRE_USUARIO + " = ?", new String[]{u.getNombre()}) != -1)
-            return true;
-        else return false;
+            res = true;
+
+        return res;
     }
 
     // Devuelve un ArrayList<Tarea> con las tareas completadas del usuario logeado
     public ArrayList<Tarea> selectAllCompletedTasksByUser(String user) {
-        ArrayList<Tarea> tasks = new ArrayList<Tarea>();
+        ArrayList<Tarea> tasks = new ArrayList<>();
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT " + ID + ", " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 1", null);
@@ -124,7 +126,7 @@ public class DBManager extends SQLiteOpenHelper {
 
     // Devuelve un ArrayList<Tarea> con las tareas incompletas del usuario logeado
     public ArrayList<Tarea> selectAllRemainingTasksByUser(String user) {
-        ArrayList<Tarea> tasks = new ArrayList<Tarea>();
+        ArrayList<Tarea> tasks = new ArrayList<>();
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT " + ID + ", " + NOMBRE_TAREA + ", " + DESCRIPCION + ", " + FECHA + ", " + COSTE + ", " + PRIORIDAD + ", " + ESTADO + " FROM " + TABLE_TAREA + " WHERE " + USUARIO + " = '" + user + "' AND " + ESTADO + " = 0", null);
@@ -151,6 +153,8 @@ public class DBManager extends SQLiteOpenHelper {
 
     // Inserta una nueva tarea al usuario logeado y nos devuelve un booleano indicando si la inserción se completó correctamente
     public boolean insertTarea(Tarea task) {
+        boolean res = false;
+
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(NOMBRE_TAREA, task.getNombre());
@@ -161,13 +165,17 @@ public class DBManager extends SQLiteOpenHelper {
         values.put(ESTADO, task.getEstado());
         values.put(USUARIO, task.getUsuario().getNombre());
 
-        if (db.insert(TABLE_TAREA, null, values) != -1) return true;
-        else return false;
+        if (db.insert(TABLE_TAREA, null, values) != -1)
+            res = true;
+
+        return res;
     }
 
     // Actualiza una tarea y nos devuelve un booleano indicando si la inserción se completó correctamente,
     // en este caso como el usuario solo puede ver sus tareas no hay necesidad de añadir un filtro de WHERE Usuario = 'Admin'
     public boolean updateTask(Tarea task) {
+        boolean res = false;
+
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -178,16 +186,21 @@ public class DBManager extends SQLiteOpenHelper {
         values.put(PRIORIDAD, task.getPrioridad());
         values.put(ESTADO, task.getEstado());
 
-        if (db.update(TABLE_TAREA, values, ID + " = ?", new String[] {String.valueOf(task.getId())}) != -1) return true;
-        else return false;
+        if (db.update(TABLE_TAREA, values, ID + " = ?", new String[] {String.valueOf(task.getId())}) != -1)
+            res = true;
+
+        return res;
     }
 
     // Elimina una tarea en abse a su ID,
     // en este caso como el usuario solo puede ver sus tareas no hay necesidad de añadir un filtro de WHERE Usuario = 'Admin'
     public boolean deleteTaskById(int id) {
+        boolean res = false;
+
         SQLiteDatabase db = this.getWritableDatabase();
         if (db.delete(TABLE_TAREA, ID + " = ?", new String[]{String.valueOf(id)}) != -1)
-            return true;
-        else return false;
+            res = true;
+
+        return res;
     }
 }

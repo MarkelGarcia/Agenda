@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.example.agenda">
 
     <application
         android:allowBackup="true"
@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".DetailActivity"
+            android:name="com.example.agenda.DetailActivity"
             android:exported="true" />
         <activity
-            android:name=".BaseActivity"
+            android:name="com.example.agenda.BaseActivity"
             android:exported="true" />
         <activity
-            android:name=".ListActivity"
+            android:name="com.example.agenda.ListActivity"
             android:exported="true" />
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.example.agenda.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.agenda.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

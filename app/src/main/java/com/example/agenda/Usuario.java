@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.agenda;
 
 public class Usuario {
     private String nombre, password;

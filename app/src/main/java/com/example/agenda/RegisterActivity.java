@@ -1,24 +1,18 @@
-package com.example.myapplication;
+package com.example.agenda;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
-
-    private Button appear = null;
-    private Button btnCancelar = null;
     private TextView nombre = null;
     private TextView descripcion = null;
     private TextView fecha = null;
@@ -37,9 +31,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        appear = findViewById( R.id.btnRegistrarNuevaTarea);
+        Button appear = findViewById( R.id.btnRegistrarNuevaTarea);
 
-        btnCancelar = findViewById(R.id.btnCancelar);
+        Button btnCancelar = findViewById(R.id.btnCancelar);
 
         nombre = findViewById(R.id.textViewNombre);
         descripcion = findViewById(R.id.TextViewDescripcion);
@@ -72,9 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
             switchRealizadaPendiente.setVisibility(View.VISIBLE);
         });
 
-        btnCancelar.setOnClickListener( (view) -> {
-            finish();
-        } );
+        btnCancelar.setOnClickListener( (view) -> finish() );
 
         registrar.setOnClickListener( (view) -> {
             // Recoger info + objeto

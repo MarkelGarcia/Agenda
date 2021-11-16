@@ -1,5 +1,6 @@
 package com.example.agenda;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,9 +50,8 @@ public class ListActivity extends AppCompatActivity {
             Tarea task = (Tarea) parent.getItemAtPosition(position);
             i.putExtra("task", task);
 
-            startActivity(i);
+            startActivityForResult(i, 1);
 
-            refreshList();
         });
 
         listTareas.setOnItemLongClickListener((parent, view, position, id) -> {
@@ -120,5 +120,12 @@ public class ListActivity extends AppCompatActivity {
     private void refreshList() {
         if (btnListPendientes.isEnabled()) loadRealizadas();
         else loadPendientes();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        refreshList();
     }
 }

@@ -38,7 +38,9 @@
         <item>Urgente</item>
     </string-array>
 
-    <!-- Errores-->
+    <!-- Errores -->
     <string name="loginError">Nombre de usuario y/o contraseña incorrecto/s</string>
 
+    <!-- Menu -->
+    <string name="changePassword">Cambiar Contraseña</string>
 </resources>

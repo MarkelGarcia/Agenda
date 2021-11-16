@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,9 +11,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class DetailActivity extends AppCompatActivity {
-    private Button btnModificar;
-    private Button btnCancelar;
-    private Button btnEliminar;
 
     private EditText editNombre;
     private EditText editDescripcion;
@@ -28,9 +24,9 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        btnModificar = findViewById(R.id.btnModificar);
-        btnCancelar = findViewById(R.id.btnCancelarUpdate);
-        btnEliminar = findViewById(R.id.btnBorrar);
+        Button btnModificar = findViewById(R.id.btnModificar);
+        Button btnCancelar = findViewById(R.id.btnCancelarUpdate);
+        Button btnEliminar = findViewById(R.id.btnBorrar);
 
         editNombre = findViewById(R.id.editTextNombreUpdate);
         editDescripcion = findViewById(R.id.editTextDescripcionUpdate);
@@ -79,9 +75,7 @@ public class DetailActivity extends AppCompatActivity {
             }
         } );
 
-        btnCancelar.setOnClickListener( (view) -> {
-            finish();
-        } );
+        btnCancelar.setOnClickListener( (view) -> finish() );
 
         btnEliminar.setOnClickListener( (view) -> {
             DBManager db = new DBManager(this);

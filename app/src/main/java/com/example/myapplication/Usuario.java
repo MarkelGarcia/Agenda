@@ -1,8 +1,5 @@
 package com.example.myapplication;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 public class Usuario {
     private String nombre, password;
 
@@ -27,12 +24,4 @@ public class Usuario {
 
     public void setPassword(String password) { this.password = password; }
 
-
-
-    // To String
-
-    @Override
-    public String toString() {
-        return "nombre : " + this.nombre + " | password : " + this.password;
-    }
 }

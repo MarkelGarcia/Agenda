@@ -15,17 +15,6 @@ public class Tarea implements Parcelable {
 
     public Tarea() { }
 
-    public Tarea(int id, String nombre, String descripcion, String fecha, double coste, String prioridad, int estado, Usuario usuario) {
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.fecha = fecha;
-        this.coste = coste;
-        this.prioridad = prioridad;
-        this.estado = estado;
-        this.usuario = usuario;
-    }
-
     public Tarea ( Parcel in ) {
         readFromParcel(in);
     }

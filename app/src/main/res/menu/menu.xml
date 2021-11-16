@@ -9,6 +9,6 @@
 
     <item
         android:id="@+id/changePassword"
-        android:title="Change Password"></item>
+        android:title="@string/changePassword"/>
 
 </menu>

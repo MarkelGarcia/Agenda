@@ -43,7 +43,6 @@ public class ListActivity extends AppCompatActivity {
 
         btnListCancelar.setOnClickListener((view) -> finish());
 
-        // Capturamos el click y
         listTareas.setOnItemClickListener((parent, view, position, id) -> {
 
             Intent i = new Intent(this, DetailActivity.class);

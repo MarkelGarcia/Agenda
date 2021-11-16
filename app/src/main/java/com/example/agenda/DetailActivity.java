@@ -68,7 +68,6 @@ public class DetailActivity extends AppCompatActivity {
             if (db.updateTask( task )) {
                 Toast t = Toast.makeText(this, "Tarea actualizada", Toast.LENGTH_LONG);
                 t.show();
-                setResult(RESULT_OK);
                 finish();
             } else {
                 Toast t = Toast.makeText(this, "Ha ocurrido un error al actualizar, comprueba los campos", Toast.LENGTH_LONG);
@@ -84,7 +83,6 @@ public class DetailActivity extends AppCompatActivity {
             if (db.deleteTaskById( taskExtra.getId() )) {
                 Toast t = Toast.makeText(this, "Tarea eliminada correctamente", Toast.LENGTH_LONG);
                 t.show();
-                setResult(RESULT_OK);
                 finish();
             } else {
                 Toast t = Toast.makeText(this, "Ha ocurrido un error al eliminar la tarea", Toast.LENGTH_LONG);

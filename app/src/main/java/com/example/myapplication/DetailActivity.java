@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class DetailActivity extends AppCompatActivity {
     private Button btnModificar;
     private Button btnCancelar;
+    private Button btnEliminar;
 
     private EditText editNombre;
     private EditText editDescripcion;
@@ -29,6 +30,7 @@ public class DetailActivity extends AppCompatActivity {
 
         btnModificar = findViewById(R.id.btnModificar);
         btnCancelar = findViewById(R.id.btnCancelarUpdate);
+        btnEliminar = findViewById(R.id.btnBorrar);
 
         editNombre = findViewById(R.id.editTextNombreUpdate);
         editDescripcion = findViewById(R.id.editTextDescripcionUpdate);
@@ -79,6 +81,19 @@ public class DetailActivity extends AppCompatActivity {
 
         btnCancelar.setOnClickListener( (view) -> {
             finish();
+        } );
+
+        btnEliminar.setOnClickListener( (view) -> {
+            DBManager db = new DBManager(this);
+
+            if (db.deleteTaskById( taskExtra.getId() )) {
+                Toast t = Toast.makeText(this, "Tarea eliminada correctamente", Toast.LENGTH_LONG);
+                t.show();
+                finish();
+            } else {
+                Toast t = Toast.makeText(this, "Ha ocurrido un error al eliminar la tarea", Toast.LENGTH_LONG);
+                t.show();
+            }
         } );
     }
 }

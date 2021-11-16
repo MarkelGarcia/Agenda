@@ -19,6 +19,7 @@
     <string name="btnCancelar">Cancelar</string>
 
     <string name="btnModificar">Modificar</string>
+    <string name="btnBorrar">Eliminar</string>
 
     <string name="textViewNombre">Nombre</string>
     <string name="textViewDescripcion">Descripcion</string>
